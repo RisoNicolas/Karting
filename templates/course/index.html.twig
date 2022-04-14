@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ASK Martigues | Liste des Courses{% endblock %}
+
+{% block body %}
+    <hr style="height: 2px">
+    <h1 class="titre-entete-crud">Liste des Courses</h1>
+    <hr style="height: 2px">
+
+<div class="main-form">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Details</th>
+                <th>DateDeDebut</th>
+                <th>DateDeFin</th>
+                <th>Duree</th>
+                <th>DateLimiteInscription</th>
+                <th>Categorie</th>
+                <th>BackgroundImg</th>
+                <th>PosterImg</th>
+                <th>Status</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for course in courses %}
+            <tr>
+                <td>{{ course.id }}</td>
+                <td>{{ course.nom | capitalize }}</td>
+                <td>{{ course.details | capitalize }}</td>
+                <td>{{ course.dateDeDebut ? course.dateDeDebut|date('d-m-Y') : '' }}</td>
+                <td>{{ course.dateDeFin ? course.dateDeFin|date('d-m-Y') : '' }}</td>
+                <td>{{ course.duree }}</td>
+                <td>{{ course.dateLimiteInscription ? course.dateLimiteInscription|date('d-m-Y') : '' }}</td>
+                <td>{{ course.categorie | capitalize}}</td>
+                <td>{{ course.backgroundImg }}</td>
+                <td>{{ course.posterImg }}</td>
+                <td>{{ course.status | capitalize}}</td>
+                <td>
+                    <a href="{{ path('app_course_show', {'id': course.id}) }}"><i title="Voir les détails de {{ course.nom }}" class='far fa-eye'></i></a>
+                    <a href="{{ path('app_course_edit', {'id': course.id}) }}"><i title="Modifier {{ course.nom }}" class='far fa-edit'></i></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="12">Aucunes courses trouvées</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_course_new') }}">Créer Nouvelle Course</a>
+</div>
+{% endblock %}

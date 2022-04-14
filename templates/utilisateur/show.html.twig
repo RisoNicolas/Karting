@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Utilisateur{% endblock %}
+
+{% block body %}
+    <div class="show-view-form">
+
+    <hr style="height: 2px">
+    <h1 class="titre-form-details-pilote">Détails Pilote ({{ utilisateur.nom|capitalize }} {{ utilisateur.prenom|capitalize }})</h1>
+    <hr style="height: 2px">
+
+    <table class="table show-view">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ utilisateur.id }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ utilisateur.email | capitalize}}</td>
+            </tr>
+            <tr>
+                <th>Roles</th>
+                <td>{{ utilisateur.roles ? utilisateur.roles|json_encode : '' }}</td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>{{ utilisateur.password }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ utilisateur.nom | capitalize}}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ utilisateur.prenom | capitalize}}</td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td>{{ utilisateur.age }}</td>
+            </tr>
+            <tr>
+                <th>Categorie</th>
+                <td>{{ utilisateur.categorie | capitalize}}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ utilisateur.adresse | capitalize}}</td>
+            </tr>
+            <tr>
+                <th>CodePostal</th>
+                <td>{{ utilisateur.codePostal }}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ utilisateur.ville | capitalize}}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ utilisateur.telephone }}</td>
+            </tr>
+            <tr>
+                <th>PhotoProfil</th>
+                <td>{{ utilisateur.photoProfil }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_utilisateur_index') }}">Retour à la liste | </a>
+
+    <a href="{{ path('app_utilisateur_edit', {'id': utilisateur.id}) }}">Modifier</a>
+
+    {{ include('utilisateur/_delete_form.html.twig') }}
+</div>
+{% endblock %}

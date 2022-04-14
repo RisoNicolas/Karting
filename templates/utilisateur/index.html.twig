@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ASK Martigues | Liste des Pilotes{% endblock %}
+
+{% block body %}
+<hr style="height: 2px">
+<h1 class="titre-entete-crud">Liste des Pilotes</h1>
+<hr style="height: 2px">
+
+<div class="main-form">
+    <table class="table table-form">
+        <thead>
+            <tr>
+
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Email</th>
+
+
+                <th>Age</th>
+                <th>Categorie</th>
+                <th>Adresse</th>
+                <th>CodePostal</th>
+                <th>Ville</th>
+                <th>Telephone</th>
+                <th>PhotoProfil</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for utilisateur in utilisateurs %}
+            <tr class="box-tr">
+                <td title="{{ utilisateur.id }}">{{ utilisateur.id }}</td>
+                <td title="{{ utilisateur.nom | capitalize }}">{{ utilisateur.nom | capitalize }}</td>
+                <td title="{{ utilisateur.prenom | capitalize}}">{{ utilisateur.prenom | capitalize}}</td>
+                <td title="{{ utilisateur.email | capitalize}}">{{ utilisateur.email | capitalize}}</td>
+
+            
+                <td title="{{ utilisateur.age }}">{{ utilisateur.age }}</td>
+                <td title="{{ utilisateur.categorie | capitalize}}">{{ utilisateur.categorie | capitalize}}</td>
+                <td title="{{ utilisateur.adresse | capitalize}}">{{ utilisateur.adresse | capitalize}}</td>
+                <td title="{{ utilisateur.codePostal }}">{{ utilisateur.codePostal }}</td>
+                <td title="{{ utilisateur.ville | capitalize}}">{{ utilisateur.ville | capitalize}}</td>
+                <td title="{{ utilisateur.telephone }}">{{ utilisateur.telephone }}</td>
+                <td title="{{ utilisateur.photoProfil }}">{{ utilisateur.photoProfil }}</td>
+                <td>
+                    <a href="{{ path('app_utilisateur_show', {'id': utilisateur.id}) }}"><i title="Voir les informations du pilote" class='far fa-eye'></i></a>
+                    <a href="{{ path('app_utilisateur_edit', {'id': utilisateur.id}) }}"><i title="Modifier les informations du pilote"  class='far fa-edit icon-edit'></i></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="14">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_utilisateur_new') }}">Créer Nouveau Pilote</a>
+</div>
+{% endblock %}

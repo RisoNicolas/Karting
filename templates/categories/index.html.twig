@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ASK Martigues | Liste des Catégories{% endblock %}
+
+{% block body %}
+<div class="bloc-titre-page">
+    <hr class="separation-titre-page-haut">
+    <h1 class="titre-page">Liste des Catégories</h1>
+    <hr class="separation-titre-page-bas">
+</div>
+
+<div class="tableau-edition">
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Libelle</th>
+            <th>AgeMin</th>
+            <th>AgeMax</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for category in categories %}
+            <tr>
+                <td>{{ category.id }}</td>
+                <td>{{ category.libelle }}</td>
+                <td>{{ category.ageMin }}</td>
+                <td>{{ category.ageMax }}</td>
+                <td>
+                    <a class="lien-voir" title="Voir la catégorie {{ category.libelle }} " href="{{ path('app_categories_show', {'id': category.id}) }}"><i class='far fa-eye'></i></a>
+                    <a class="lien-modifier" title="Modifier la catégorie {{ category.libelle }}" href="{{ path('app_categories_edit', {'id': category.id}) }}">| <i class='far fa-edit'></i></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Aucun enregistrement trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_categories_new') }}">Créer nouvelle catégorie</a>
+</div>
+{% endblock %}

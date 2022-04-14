@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+ASK Martigues | Edition Admin
+{% endblock %}
+
+
+{% block body %}
+<div class="lien-edition">
+    <a href="{{ path('app_categories_index') }}">Créer ou modifier une catégorie</a>
+    <a href="{{ path('app_status_index') }}">Créer ou modifier un status de course</a>
+</div>
+
+{% endblock %}
+

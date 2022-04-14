@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ASK Martigues | Se connecter{% endblock %}
+
+{% block body %}
+    <div class="bloc-titre-page">
+        <hr class="separation-titre-page-haut">
+        <h1 class="titre-page">Identifiez-vous</h1>
+        <hr class="separation-titre-page-bas">
+    </div>
+
+
+    <form method="post" class="login-form">
+        {% if error %}
+            <div class="alert alert-danger">Identifiant ou Mot de passe Incorrect</div>
+        {% endif %}
+
+
+        <label for="inputEmail">Email</label>
+        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control"
+               autocomplete="email" required autofocus>
+        <label for="inputPassword">Mot De Passe</label>
+        <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password"
+               required>
+
+        <input type="hidden" name="_csrf_token"
+               value="{{ csrf_token('authenticate') }}"
+        >
+
+
+        <div class="checkbox mb-3">
+            <label class="seSouvenirDeMoi">
+                <input class="input-checkbox" type="checkbox" name="_remember_me"> Se souvenir de moi
+            </label>
+        </div>
+
+
+        <button class="btn btn-lg btn-primary btn-form-login" type="submit">
+            Valider
+        </button>
+    </form>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ASK Martigues | Liste des Statuts{% endblock %}
+
+{% block body %}
+<div class="bloc-titre-page">
+    <hr class="separation-titre-page-haut">
+    <h1 class="titre-page">Liste des Statuts</h1>
+    <hr class="separation-titre-page-bas">
+</div>
+<div class="tableau-edition">
+    <table class="col-xl-4 table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Libelle</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for status in statuses %}
+            <tr>
+                <td>{{ status.id }}</td>
+                <td>{{ status.libelle }}</td>
+                <td>
+                    <a title="Voir le statut {{ status.libelle }}" href="{{ path('app_status_show', {'id': status.id}) }}"><i class='far fa-eye'></i></a>
+                    <a title="Modifier le statut {{ status.libelle }}" href="{{ path('app_status_edit', {'id': status.id}) }}">| <i class='far fa-edit'></i></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Aucun enregistrement trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_status_new') }}">Créer nouveau statut</a>
+</div>
+{% endblock %}

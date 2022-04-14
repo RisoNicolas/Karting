@@ -1,0 +1,46 @@
+<nav>
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav lien-navbar">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{ path('main_accueil')}}"><strong>Accueil</strong></a>
+                    </li>
+                    {% if app.user == null %}
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{ path('login')}}">Se connecter</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_register') }}">S'inscrire</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Les Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Bulletin d'Inscription</a>
+                    </li>
+                    {% if is_granted("ROLE_ADMIN") %}
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('app_course_index')}}" >Modifier Courses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('app_utilisateur_index') }}">Modifier Pilotes</a>
+                        </li>
+                        <SELECT class="btn-option-barnav" name="nom">
+                            <OPTION value="">Modifications Administrateur
+                            <OPTION><a class="nav-link" href="{{ path('app_course_index')}}" >Modifier Courses</a>
+                            <OPTION><a class="nav-link" href="{{ path('app_utilisateur_index') }}">Modifier Pilotes</a>
+                        </SELECT>
+                    {% endif %}
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+</nav>

@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ASK Martigues | Créer un Compte{% endblock %}
+
+{% block body %}
+    <div class="bloc-titre-page">
+        <hr class="separation-titre-page-haut">
+        <h1 class="titre-page">Créer un Compte</h1>
+        <hr class="separation-titre-page-bas">
+    </div>
+
+
+
+    {{ form_start(utilisateurForm) }}
+    <div class="col-xl-12 form-creation-compte">
+        <div class="col-3"></div>
+        <div class="col-3 bloc1-form-creation-compte">
+            {{ form_row(utilisateurForm.nom) }}
+            {{ form_row(utilisateurForm.prenom) }}
+            {{ form_row(utilisateurForm.age) }}
+            {{ form_row(utilisateurForm.categorie) }}
+            {{ form_row(utilisateurForm.telephone) }}
+        </div>
+        <div class="col-3 bloc2-form-creation-compte">
+            {{ form_row(utilisateurForm.adresse) }}
+            {{ form_row(utilisateurForm.codePostal) }}
+            {{ form_row(utilisateurForm.ville) }}
+            {{ form_row(utilisateurForm.email) }}
+            {{ form_row(utilisateurForm.password) }}
+        </div>
+        <div class="col-3"></div>
+    </div>
+    <div class="terms">
+        {{ form_row(utilisateurForm.agreeTerms) }}
+    </div>
+
+
+
+
+    <button type="submit" class="btn btn-primary btn-form-creation-utilisateur">Créer</button>
+    <button type="submit" class="btn btn-danger btn-form-creation-utilisateur">Annuler</button>
+    {{ form_end(utilisateurForm) }}
+    <div id="section1" class="sectionid">
+        <h1>section1</h1>
+    </div>
+    <div id="section2" class="sectionid">
+        <h1>section2</h1>
+    </div>
+    <div id="section3" class="sectionid">
+        <h1>section3</h1>
+    </div>
+    <div  class="sectionid">
+        <h1 id="section4">section4</h1>
+    </div>
+
+{% endblock %}

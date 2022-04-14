@@ -1,0 +1,246 @@
+@import url("https://use.typekit.net/ipm5zbg.css");
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+/*
+font-family: kallisto,sans-serif;
+font-family: kallisto-lined,sans-serif;
+font-family: 'Raleway', sans-serif;
+
+*/
+.sectionid{
+    height: 1200px;
+    background-color: #5eb5e0;
+}
+a{
+    text-decoration: none;
+}
+
+.lien-navbar{
+    display: flex;
+    align-items: center;
+}
+.tableau-edition{
+    padding: 0 25px 25px 25px;
+}
+.tableau-edition h1{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+body{
+    display: flex;
+    justify-content: center;
+
+    background-image: url("../img/background/ASK_Martigues_Piste_Background.jpg");
+    background-repeat: no-repeat;
+    background-color: rgba(255,255,255,0.8);
+    background-size: cover;
+    box-sizing: border-box;
+}
+.container-fluid{
+    padding: 0;
+}
+main{
+
+}
+
+.lien-navbar a{
+
+    color: #5b5b5b;
+}
+.lien-navbar a:hover{
+    color: #ff8000;
+}
+
+/* /////////////////////////// BARRE NAVIGUATION ///////////////////////*/
+
+.logo-barnav{
+    width: 350px;
+}
+.bar-navigation{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #eeeeee;
+    padding-top: 10px;
+}
+.bloc1-bar-naviguation{
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.bloc2-bar-naviguation{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 10px 60px 10px 40px;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+}
+.info-connection{
+    font-size: 0.9rem;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 0;
+}
+.nom-utilisateur{
+    color: #5ccb00;
+}
+
+
+
+
+/* ///////////////////////// BLOC TITRE PAGE ////////////////////////*/
+.bloc-titre-page{
+    margin-bottom: 70px;
+    background:radial-gradient(circle at 50% 50%, rgba(255, 107, 0, 1) 0%, rgba(255, 255, 0, 1) 95%);
+}
+
+.separation-titre-page-haut{
+    height: 3px;
+    border-width: 0;
+    color: dimgrey;
+    background-color: black;
+    opacity: 1;
+    margin: 0 0 15px 0;
+}
+
+.separation-titre-page-bas{
+    height: 3px;
+    border-width: 0;
+    color: dimgrey;
+    background-color: black;
+    opacity: 1;
+}
+
+.titre-page{
+    font-family: kallisto,sans-serif;
+    font-weight: 400;
+    text-align: center;
+    box-sizing: border-box;
+    color: white;
+    margin: 0;
+}
+
+
+
+
+/* /////////////////////////////////////////////////////////////////////////////
+//////////////////////////////// FORMULAIRES //////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////*/
+
+
+/* /////////////////////// FORMULAIRE IDENTIFICATION ///////////////////////*/
+
+.seSouvenirDeMoi{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}
+.input-checkbox{
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+form{
+    text-align: center;
+    width: 100%;
+}
+form input,textarea,select{
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    width: 300px;
+    max-width: 50%;
+}
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login-form input{
+
+    box-sizing: border-box;
+    width: 300px;
+    max-width: 50%;
+}
+
+label{
+    display: block;
+    margin-bottom: 5px;
+    font-weight:500 ;
+}
+
+.form_creation_course{
+    display: flex;
+    justify-content: center;
+}
+.form-creation-compte{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.bloc1-form-creation-compte{
+
+}
+.bloc2-form-creation-compte{
+
+}
+.terms{
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 20px 0 20px 0;
+
+}
+.btn-form-creation-course, .btn-form-login, .btn-form-creation-utilisateur{
+    width: 150px;
+}
+
+.liste-course{
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+}
+
+.far:hover{
+    color: #ff6607;
+    opacity: 0.5;
+}
+
+/* /////////////////////////////////////////////////////////////////////////////
+//////////////////////////// PAGE EDITION ADMIN ///////////////////////////////
+////////////////////////////////////////////////////////////////////////////*/
+
+.lien-edition{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.main-form, .show-view-form{
+    box-sizing: border-box;
+    padding:10px 40px 10px 40px;
+}
+td
+{
+    border: #6c6c6c 1px solid;
+    text-align: left;
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.show-view th{
+    width: 20%;
+}
+.titre-entete-crud{
+    font-family: kallisto,sans-serif;
+    text-align: center;
+}
+.btn-option-barnav{
+    margin: 0;
+    height: 40px;
+    font-size: .9rem;
+    padding: 2px 5px;
+}
+
